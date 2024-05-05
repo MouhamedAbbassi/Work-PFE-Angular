@@ -1,0 +1,259 @@
+<div class="auth-main">
+  <div class="auth-wrapper version-1">
+    <div class="auth-form">
+      <div class="auth-background">
+        <div class="yellow-circle"></div>
+        <div class="red-circle"></div>
+      </div>
+      <div class="main-form">
+
+
+        <app-card [showHeader]="false" class="auth-form-card" [padding]="40">
+
+
+          <div class="row text-start">
+            <select style="height: 40px; margin-bottom: 20px;" id="monselect" class="w-100 m-t-5" (change)="onSelectChange($event)">
+              <option value="Etudiant">Etudiant</option>
+              <option value="Entreprise" >Entreprise</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="row text-start" *ngIf="showInputs">
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">First Name</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="firstName" required matInput placeholder="First Name" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Last Name</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text" [(ngModel)]="lastName" required matInput placeholder="Last Name" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Phone</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"required [(ngModel)]="phone" matInput placeholder="Phone number" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Specialisation</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text" [(ngModel)]="specialisation"required matInput placeholder="Specialisation" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <label for="name" class="f-w-500">slug</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="slug" required matInput placeholder="slug" />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter Your Email</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input matInput [(ngModel)]="email" required placeholder="Email Address" />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter your password</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input  required matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" placeholder="Enter your password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter your Confirm Password</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input required matInput [(ngModel)]="confirmPassword" [type]="coHide ? 'password' : 'text'" placeholder="Enter your password" />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="coHide = !coHide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="coHide"
+                >
+                  <mat-icon>{{ coHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="row text-start" *ngIf="!showInputs">
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Raison Sociale</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="raisonSociale" required matInput placeholder="raisonSociale" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Adresse</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text" [(ngModel)]="adresse" required matInput placeholder="adresse" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Telephone</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text" [(ngModel)]="telephone"required matInput placeholder="telephone" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Telephone Responsable</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text" [(ngModel)]="telephoneResponsable"required matInput placeholder="telephone Responsable" />
+              </mat-form-field>
+            </div>
+
+
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Pays</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"required [(ngModel)]="pays" matInput placeholder="pays" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Fax</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="fax" required matInput placeholder="fax" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">SiteWeb</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="siteWeb" required matInput placeholder="siteWeb" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Matricule Fiscale</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="matriculeFiscale" required matInput placeholder="matriculeFiscale" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Patents</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="patents" required matInput placeholder="patents" />
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Secteur Activite</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="secteurActivite" required matInput placeholder="secteurActivite" />
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-12">
+              <label for="name" class="f-w-500">Description</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="description" required matInput placeholder="description" />
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Premier Responsable</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="premierResponsable" required matInput placeholder="premierResponsable" />
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-md-6">
+              <label for="name" class="f-w-500">Slug</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input type="text"[(ngModel)]="slugE" required matInput placeholder="Slug" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter Your Email</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input matInput [(ngModel)]="emailE" required placeholder="Email Address" />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter Your Email Contact</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input matInput [(ngModel)]="emailContact" required placeholder="Email Address Contact" />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter your password</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input  required matInput [(ngModel)]="passwordE" [type]="hide ? 'password' : 'text'" placeholder="Enter your password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <label for="name" class="f-w-500">Enter your Confirm Password</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input required matInput [(ngModel)]="confirmPasswordE" [type]="coHide ? 'password' : 'text'" placeholder="Enter your password" />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="coHide = !coHide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="coHide"
+                >
+                  <mat-icon>{{ coHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="check-me">
+            <mat-checkbox class="float-start" checked color="primary">I agree to all the Terms & Condition</mat-checkbox>
+          </div>
+          <div *ngIf="error" style="color: red; margin-left: 45px;" class="error-message">{{ error }}</div> <!-- Display error message -->
+
+          <div class="grid"*ngIf="showInputs">
+            <button mat-flat-button (click)="register()" class="b-rad-20 m-t-15">Register</button>
+          </div>
+
+          <div class="grid" *ngIf="!showInputs">
+            <button mat-flat-button (click)="registerEntreprise()" class="b-rad-20 m-t-15">Register</button>
+          </div>
+
+          <div class="check-me m-t-15">
+            <h6 class="f-w-400 text-muted m-b-0">Don't have an Account?</h6>
+            <a class="text-primary-500" [routerLink]="['/auth/login']">Login Account</a>
+          </div>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</div>
