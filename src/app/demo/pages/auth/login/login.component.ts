@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar
 
 // project import
 import { SharedModule } from 'src/app/demo/shared/shared.module';
+import { EntrepriseService } from 'src/app/services/entrprise';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ export default class LoginComponent {
 
   constructor(
     private etudiantService: EtudiantService,
+    private entrepriseService: EntrepriseService,
     private router: Router,
     private snackBar: MatSnackBar
   ) {}
@@ -55,5 +57,25 @@ export default class LoginComponent {
         });
       }
     );
+
+
+        // Call login function from EtudiantService
+        this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
+          response => {
+            // Handle successful login
+            console.log('Login successful', response);
+            // Redirect user to dashboard or any desired page
+            this.router.navigate(['/dashboard']);
+          },
+          error => {
+            // Handle login error
+            console.error('Login failed', error);
+            // Display error message
+            this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
+              duration: 3000,
+            });
+          }
+        );
+
   }
 }
