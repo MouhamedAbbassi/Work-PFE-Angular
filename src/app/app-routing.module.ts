@@ -11,31 +11,24 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        path: '',redirectTo: '/auth/login',pathMatch: 'full'
       },
       {
-        path: 'dashboard',
-        loadComponent: () => import('./demo/pages/dashboard/dashboard.component')
+        path: 'dashboard',loadComponent: () => import('./demo/pages/dashboard/dashboard.component')
       },
       {
-        path: 'component',
-        loadChildren: () => import('./demo/pages/ui-component/ui-component.module').then((m) => m.UiComponentModule)
+        path: 'component',loadChildren: () => import('./demo/pages/ui-component/ui-component.module').then((m) => m.UiComponentModule)
       },
       {
-        path: 'sample-page',
-        loadComponent: () => import('./demo/pages/sample-page/sample-page.component')
+        path: 'sample-page',loadComponent: () => import('./demo/pages/sample-page/sample-page.component')
       }
     ]
   },
   {
-    path: '',
-    component: EmptyComponent,
+    path: '',component: EmptyComponent,
     children: [
       {
-        path: 'auth',
-        loadChildren: () => import('./demo/pages/auth/auth.module').then((m) => m.AuthModule)
+        path: 'auth',loadChildren: () => import('./demo/pages/auth/auth.module').then((m) => m.AuthModule)
       }
     ]
   }
