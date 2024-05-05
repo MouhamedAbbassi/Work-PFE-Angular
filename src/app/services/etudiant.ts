@@ -7,11 +7,15 @@ import { Etudiant } from '../models/etudiant';
   providedIn: 'root'
 })
 export class EtudiantService {
-  private baseUrl = 'http://localhost:3600/api/signup';
+  private baseUrl = 'http://localhost:3600/api';
 
   constructor(private http: HttpClient) { }
 
   signup(etudiant: Etudiant): Observable<any> {
-    return this.http.post<any>(this.baseUrl, etudiant);
+    return this.http.post<any>(this.baseUrl+'/signup', etudiant);
+  }
+
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(this.baseUrl+'/login', credentials);
   }
 }

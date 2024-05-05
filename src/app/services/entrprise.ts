@@ -7,11 +7,15 @@ import { Entreprise } from '../models/entreprise';
   providedIn: 'root'
 })
 export class EntrepriseService {
-  private apiUrl = 'http://localhost:3600/api/entreprise/signup';
+  private apiUrl = 'http://localhost:3600/api/entreprise';
 
   constructor(private http: HttpClient) { }
 
   signup(entreprise: Entreprise): Observable<any> {
-    return this.http.post<any>(this.apiUrl, entreprise);
+    return this.http.post<any>(this.apiUrl+'/signup', entreprise);
+  }
+
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl+'/login', credentials);
   }
 }
