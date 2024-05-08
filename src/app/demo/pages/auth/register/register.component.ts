@@ -57,7 +57,7 @@ export default class RegisterComponent {
 
 
 
-   selectedValue="";
+   selectedValue="Etudiant";
   onSelectChange(event: any) {
     this.selectedValue = event;
     this.showInputs = this.selectedValue === 'Etudiant';
