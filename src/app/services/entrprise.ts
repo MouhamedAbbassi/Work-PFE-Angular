@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Entreprise } from '../models/entreprise';
+import { Offer } from '../models/offer';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,9 @@ export class EntrepriseService {
   getProfileById(id: any): Observable<any> {
     // Concatenate the id parameter to the URL
     return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  newOffer(offer: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl+'/emplois', offer);
   }
 }
