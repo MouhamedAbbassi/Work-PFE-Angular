@@ -1,6 +1,5 @@
 // angular import
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { EtudiantService } from 'src/app/services/etudiant'; // Import EtudiantService
 import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar for displaying messages
@@ -23,6 +22,8 @@ export default class LoginComponent {
   email: string = ''; // Add email property to bind with input field
   password: string = ''; // Add password property to bind with input field
 
+  etudiantLoginSuccess=true ;
+  entrepriseLoginSuccess=true ;
   constructor(
     private etudiantService: EtudiantService,
     private entrepriseService: EntrepriseService,
@@ -42,40 +43,52 @@ export default class LoginComponent {
 
     // Call login function from EtudiantService
     this.etudiantService.login({ email: this.email, password: this.password }).subscribe(
-      response => {
+      (response: any) => {
+        this.etudiantLoginSuccess=true;
         // Handle successful login
-        console.log('Login successful', response);
+        console.log('Etudiant login successful', response);
+        // Store token in local storage
+        localStorage.setItem('token', response.token);
         // Redirect user to dashboard or any desired page
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profileEtudiant']);
       },
       error => {
         // Handle login error
-        console.error('Login failed', error);
-        // Display error message
-        this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-          duration: 3000,
-        });
+        this.etudiantLoginSuccess=false;
+        console.error('Etudiant login failed', error);
+        this.redirectOnBothFail();
+
       }
     );
 
+    // Call login function from EntrepriseService
+    this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
+      (response: any) => {
+        this.entrepriseLoginSuccess=true;
+        // Handle successful login
+        console.log('Entreprise login successful', response);
+        // Store token in local storage
+        localStorage.setItem('token', response.token);
+        // Redirect user to dashboard or any desired page
+        this.router.navigate(['/profile']);
+      },
+      error => {
+        this.entrepriseLoginSuccess=false;
+        // Handle login error
+        console.error('Entreprise login failed', error);
+        this.redirectOnBothFail();
 
-        // Call login function from EtudiantService
-        this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
-          response => {
-            // Handle successful login
-            console.log('Login successful', response);
-            // Redirect user to dashboard or any desired page
-            this.router.navigate(['/dashboard']);
-          },
-          error => {
-            // Handle login error
-            console.error('Login failed', error);
-            // Display error message
-            this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-              duration: 3000,
-            });
-          }
-        );
+      }
+    );
+  }
 
+  redirectOnBothFail(): void {
+    if(this.entrepriseLoginSuccess==false&&this.etudiantLoginSuccess==false) {
+      this.entrepriseLoginSuccess=true;
+      this.etudiantLoginSuccess=true;
+      this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
+        duration: 3000,
+      });
+    }
   }
 }

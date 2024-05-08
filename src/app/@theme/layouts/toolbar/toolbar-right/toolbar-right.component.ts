@@ -1,5 +1,6 @@
 // angular import
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-right',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./toolbar-right.component.scss']
 })
 export class NavRightComponent {
+
+  constructor(private router: Router) {}
+
+  logout(): void {
+    // Perform any necessary cleanup tasks here
+
+    // For example, clear any stored authentication tokens or session data
+    localStorage.removeItem('token'); // Clear token from local storage
+
+    // Navigate to the login page or any other desired page after logout
+    this.router.navigate(['/auth/login']);
+  }
   // public props
   mainCards = [
     {
@@ -72,4 +85,6 @@ export class NavRightComponent {
       img: 'assets/images/layout/img-announcement-4.png'
     }
   ];
+
+
 }
