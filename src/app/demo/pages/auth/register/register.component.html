@@ -241,11 +241,11 @@
           <div *ngIf="error" style="color: red; margin-left: 45px;" class="error-message">{{ error }}</div> <!-- Display error message -->
 
           <div class="grid"*ngIf="showInputs">
-            <button mat-flat-button (click)="register()" class="b-rad-20 m-t-15">Register</button>
+            <button mat-flat-button (click)="register()" color="primary" style="color:white;"  class="b-rad-20 m-t-15">Register</button>
           </div>
 
           <div class="grid" *ngIf="!showInputs">
-            <button mat-flat-button (click)="registerEntreprise()" class="b-rad-20 m-t-15">Register</button>
+            <button mat-flat-button (click)="registerEntreprise()"color="primary" style="color:white;" class="b-rad-20 m-t-15">Register</button>
           </div>
 
           <div class="check-me m-t-15">
