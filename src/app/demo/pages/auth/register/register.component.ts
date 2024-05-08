@@ -57,11 +57,13 @@ export default class RegisterComponent {
 
 
 
-
+   selectedValue="Etudiant";
   onSelectChange(event: any) {
-    const selectedValue = event.target.value;
-    this.showInputs = selectedValue === 'Etudiant';
+    this.selectedValue = event;
+    this.showInputs = this.selectedValue === 'Etudiant';
   }
+
+
   register(): void {
     if (this.showInputs) {
       const etudiant = {

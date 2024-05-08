@@ -11,13 +11,13 @@
         <app-card [showHeader]="false" class="auth-form-card" [padding]="40">
 
 
-          <div class="row text-start">
-            <select style="height: 40px; margin-bottom: 20px;" id="monselect" class="w-100 m-t-5" (change)="onSelectChange($event)">
-              <option value="Etudiant">Etudiant</option>
-              <option value="Entreprise" >Entreprise</option>
-            </select>
-          </div>
 
+          <div style="margin-bottom: 30px;">
+            <button   *ngIf="selectedValue == 'Etudiant'"   color="primary" style="color:white; margin-left: 20px;margin-right: 20px; width: 170px;" class="b-rad-20 m-t-15"  mat-flat-button (click)="onSelectChange('Etudiant')">Etudiant</button>
+            <button   *ngIf="selectedValue !== 'Etudiant'"   style="color:blue; margin-left: 20px;margin-right: 20px; width: 170px;" class="b-rad-20 m-t-15"  mat-flat-button (click)="onSelectChange('Etudiant')">Etudiant</button>
+            <button  *ngIf="selectedValue == 'Entreprise'" color="primary" style="color:white; width: 170px;" class="b-rad-20 m-t-15" mat-flat-button  (click)="onSelectChange('Entreprise')">Entreprise</button>
+            <button  *ngIf="selectedValue !== 'Entreprise'" style="color:blue; width: 170px;" class="b-rad-20 m-t-15" mat-flat-button  (click)="onSelectChange('Entreprise')">Entreprise</button>
+          </div>
 
 
 
