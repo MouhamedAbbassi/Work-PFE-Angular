@@ -22,6 +22,8 @@ export default class LoginComponent {
   email: string = ''; // Add email property to bind with input field
   password: string = ''; // Add password property to bind with input field
 
+  etudiantLoginSuccess=true ;
+  entrepriseLoginSuccess=true ;
   constructor(
     private etudiantService: EtudiantService,
     private entrepriseService: EntrepriseService,
@@ -42,6 +44,7 @@ export default class LoginComponent {
     // Call login function from EtudiantService
     this.etudiantService.login({ email: this.email, password: this.password }).subscribe(
       (response: any) => {
+        this.etudiantLoginSuccess=true;
         // Handle successful login
         console.log('Etudiant login successful', response);
         // Store token in local storage
@@ -51,17 +54,17 @@ export default class LoginComponent {
       },
       error => {
         // Handle login error
+        this.etudiantLoginSuccess=false;
         console.error('Etudiant login failed', error);
-        // Display error message
-        this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-          duration: 3000,
-        });
+        this.redirectOnBothFail();
+
       }
     );
 
     // Call login function from EntrepriseService
     this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
       (response: any) => {
+        this.entrepriseLoginSuccess=true;
         // Handle successful login
         console.log('Entreprise login successful', response);
         // Store token in local storage
@@ -70,13 +73,22 @@ export default class LoginComponent {
         this.router.navigate(['/profile']);
       },
       error => {
+        this.entrepriseLoginSuccess=false;
         // Handle login error
         console.error('Entreprise login failed', error);
-        // Display error message
-        this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-          duration: 3000,
-        });
+        this.redirectOnBothFail();
+
       }
     );
+  }
+
+  redirectOnBothFail(): void {
+    if(this.entrepriseLoginSuccess==false&&this.etudiantLoginSuccess==false) {
+      this.entrepriseLoginSuccess=true;
+      this.etudiantLoginSuccess=true;
+      this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
+        duration: 3000,
+      });
+    }
   }
 }
