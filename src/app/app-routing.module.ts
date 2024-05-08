@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 // project import
 import { AdminComponent } from './demo/layout/admin';
 import { EmptyComponent } from './demo/layout/empty';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileEtudiantComponent } from './profile-etudiant/profile-etudiant.component';
 
 const routes: Routes = [
   {
@@ -21,7 +23,10 @@ const routes: Routes = [
       },
       {
         path: 'sample-page',loadComponent: () => import('./demo/pages/sample-page/sample-page.component')
-      }
+      },
+      {path:"profile", component:ProfileComponent},
+      {path:"profileEtudiant", component:ProfileEtudiantComponent},
+
     ]
   },
   {

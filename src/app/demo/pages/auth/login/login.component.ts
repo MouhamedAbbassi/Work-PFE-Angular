@@ -1,6 +1,5 @@
 // angular import
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { EtudiantService } from 'src/app/services/etudiant'; // Import EtudiantService
 import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar for displaying messages
@@ -42,15 +41,17 @@ export default class LoginComponent {
 
     // Call login function from EtudiantService
     this.etudiantService.login({ email: this.email, password: this.password }).subscribe(
-      response => {
+      (response: any) => {
         // Handle successful login
-        console.log('Login successful', response);
+        console.log('Etudiant login successful', response);
+        // Store token in local storage
+        localStorage.setItem('token', response.token);
         // Redirect user to dashboard or any desired page
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profileEtudiant']);
       },
       error => {
         // Handle login error
-        console.error('Login failed', error);
+        console.error('Etudiant login failed', error);
         // Display error message
         this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
           duration: 3000,
@@ -58,24 +59,24 @@ export default class LoginComponent {
       }
     );
 
-
-        // Call login function from EtudiantService
-        this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
-          response => {
-            // Handle successful login
-            console.log('Login successful', response);
-            // Redirect user to dashboard or any desired page
-            this.router.navigate(['/dashboard']);
-          },
-          error => {
-            // Handle login error
-            console.error('Login failed', error);
-            // Display error message
-            this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-              duration: 3000,
-            });
-          }
-        );
-
+    // Call login function from EntrepriseService
+    this.entrepriseService.login({ email: this.email, password: this.password }).subscribe(
+      (response: any) => {
+        // Handle successful login
+        console.log('Entreprise login successful', response);
+        // Store token in local storage
+        localStorage.setItem('token', response.token);
+        // Redirect user to dashboard or any desired page
+        this.router.navigate(['/profile']);
+      },
+      error => {
+        // Handle login error
+        console.error('Entreprise login failed', error);
+        // Display error message
+        this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
+          duration: 3000,
+        });
+      }
+    );
   }
 }
