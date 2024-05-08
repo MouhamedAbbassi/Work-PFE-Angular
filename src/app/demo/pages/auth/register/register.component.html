@@ -23,21 +23,21 @@
 
           <div class="row text-start" *ngIf="showInputs">
             <div class="col-md-6">
-              <label for="name" class="f-w-500">First Name</label>
+              <label for="name" class="f-w-500">Nom</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input type="text"[(ngModel)]="firstName" required matInput placeholder="First Name" />
+                <input type="text"[(ngModel)]="firstName" required matInput placeholder="Nom" />
               </mat-form-field>
             </div>
             <div class="col-md-6">
-              <label for="name" class="f-w-500">Last Name</label>
+              <label for="name" class="f-w-500">Prenom</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input type="text" [(ngModel)]="lastName" required matInput placeholder="Last Name" />
+                <input type="text" [(ngModel)]="lastName" required matInput placeholder="Prenom" />
               </mat-form-field>
             </div>
             <div class="col-md-6">
-              <label for="name" class="f-w-500">Phone</label>
+              <label for="name" class="f-w-500">Telephone</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input type="text"required [(ngModel)]="phone" matInput placeholder="Phone number" />
+                <input type="text"required [(ngModel)]="phone" matInput placeholder="Telephone " />
               </mat-form-field>
             </div>
             <div class="col-md-6">
@@ -53,24 +53,24 @@
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter Your Email</label>
+              <label for="name" class="f-w-500"> Email</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input matInput [(ngModel)]="email" required placeholder="Email Address" />
+                <input matInput [(ngModel)]="email" required placeholder="Email " />
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter your password</label>
+              <label for="name" class="f-w-500">Mot de passe</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input  required matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" placeholder="Enter your password" />
+                <input  required matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" placeholder="Mot de passe" />
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                 </button>
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter your Confirm Password</label>
+              <label for="name" class="f-w-500">Confirmé le mot de passe</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input required matInput [(ngModel)]="confirmPassword" [type]="coHide ? 'password' : 'text'" placeholder="Enter your password" />
+                <input required matInput [(ngModel)]="confirmPassword" [type]="coHide ? 'password' : 'text'" placeholder="Confirmé le mot de passe" />
                 <button
                   mat-icon-button
                   matSuffix
@@ -136,9 +136,9 @@
             </div>
 
             <div class="col-md-6">
-              <label for="name" class="f-w-500">SiteWeb</label>
+              <label for="name" class="f-w-500">Site Web</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input type="text"[(ngModel)]="siteWeb" required matInput placeholder="siteWeb" />
+                <input type="text"[(ngModel)]="siteWeb" required matInput placeholder="site Web" />
               </mat-form-field>
             </div>
 
@@ -176,7 +176,7 @@
             <div class="col-md-6">
               <label for="name" class="f-w-500">Premier Responsable</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input type="text"[(ngModel)]="premierResponsable" required matInput placeholder="premierResponsable" />
+                <input type="text"[(ngModel)]="premierResponsable" required matInput placeholder="premier Responsable" />
               </mat-form-field>
             </div>
 
@@ -189,30 +189,30 @@
             </div>
 
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter Your Email</label>
+              <label for="name" class="f-w-500"> Email</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input matInput [(ngModel)]="emailE" required placeholder="Email Address" />
+                <input matInput [(ngModel)]="emailE" required placeholder="Email" />
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter Your Email Contact</label>
+              <label for="name" class="f-w-500"> Email Contact</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input matInput [(ngModel)]="emailContact" required placeholder="Email Address Contact" />
+                <input matInput [(ngModel)]="emailContact" required placeholder="Email Contact" />
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter your password</label>
+              <label for="name" class="f-w-500">Mot de passe</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input  required matInput [(ngModel)]="passwordE" [type]="hide ? 'password' : 'text'" placeholder="Enter your password" />
+                <input  required matInput [(ngModel)]="passwordE" [type]="hide ? 'password' : 'text'" placeholder="Mot de passe" />
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                 </button>
               </mat-form-field>
             </div>
             <div class="col-12">
-              <label for="name" class="f-w-500">Enter your Confirm Password</label>
+              <label for="name" class="f-w-500">Confirmé le mot de passe</label>
               <mat-form-field appearance="outline" class="w-100 m-t-5">
-                <input required matInput [(ngModel)]="confirmPasswordE" [type]="coHide ? 'password' : 'text'" placeholder="Enter your password" />
+                <input required matInput [(ngModel)]="confirmPasswordE" [type]="coHide ? 'password' : 'text'" placeholder="Confirmé le mot de passe" />
                 <button
                   mat-icon-button
                   matSuffix
@@ -236,16 +236,16 @@
 
 
           <div class="check-me">
-            <mat-checkbox class="float-start" checked color="primary">I agree to all the Terms & Condition</mat-checkbox>
+            <mat-checkbox class="float-start" checked color="primary">J'accepte tous les termes et conditions</mat-checkbox>
           </div>
           <div *ngIf="error" style="color: red; margin-left: 45px;" class="error-message">{{ error }}</div> <!-- Display error message -->
 
           <div class="grid"*ngIf="showInputs">
-            <button mat-flat-button (click)="register()" color="primary" style="color:white;"  class="b-rad-20 m-t-15">Register</button>
+            <button mat-flat-button (click)="register()" color="primary" style="color:white;"  class="b-rad-20 m-t-15">Registrer</button>
           </div>
 
           <div class="grid" *ngIf="!showInputs">
-            <button mat-flat-button (click)="registerEntreprise()"color="primary" style="color:white;" class="b-rad-20 m-t-15">Register</button>
+            <button mat-flat-button (click)="registerEntreprise()"color="primary" style="color:white;" class="b-rad-20 m-t-15">Registerer</button>
           </div>
 
           <div class="check-me m-t-15">
