@@ -14,6 +14,14 @@ export const menus: Navigation[] = [
         classes: 'nav-item',
         url: '/dashboard',
         icon: '#custom-status-up'
+      },
+      {
+        id: 'Offres',
+        title: 'Offres',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/offres',
+        icon: '#custom-bag'
       }
     ]
   },

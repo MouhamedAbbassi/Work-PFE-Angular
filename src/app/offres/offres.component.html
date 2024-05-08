@@ -1,0 +1,203 @@
+<div class="container" >
+  <form class="well form-horizontal"   >
+    <fieldset style="border-radius:5px;width: 500px;">
+
+      <!-- Text input -->
+      <div class="form-group" >
+        <label class="col-md-12 control-label">Type</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+             <select name="type" class="form-control"style="width: 500px;height: 40px;
+              border-radius: 5px;border-color: dodgerblue; "  [(ngModel)]="type">
+              <option value="stage_ete">Stage PFE</option>
+              <option value="stage_pfe">Stage Ete</option>
+              <option value="emploi">Emplois</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Description</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="description" placeholder="Description" type="text" [(ngModel)]="description"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Entreprise</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="entreprise" placeholder="Nom de l'entreprise " class="form-control" type="text"[(ngModel)]="entreprise"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Lieu</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="lieu" placeholder="Lieu" class="form-control" type="text"[(ngModel)]="lieu"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Date input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Date Publication</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="datePublication" class="form-control" type="datetime-local"[(ngModel)]="datePublication"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Date input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Date Expiration</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="dateExpiration" class="form-control" type="datetime-local"[(ngModel)]="dateExpiration"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Multiple Select -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Compétences Requises</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="CompetencesRequises" placeholder="Compétences Requises" [(ngModel)]="competencesRequises"
+              class="form-control" type="text" style="width: 500px; height: 40px; border-radius: 5px; border-color: dodgerblue;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Experience Requise</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="experienceRequise" placeholder="Experience Requise" [(ngModel)]="experienceRequise"
+              class="form-control" type="text" style="width: 500px; height: 40px; border-radius: 5px; border-color: dodgerblue;">
+          </div>
+        </div>
+      </div>
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Niveau Etude Requis</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="niveauEtudeRequis" placeholder="Niveau Etude Requis" [(ngModel)]="niveauEtudeRequis"
+            class="form-control" type="text"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Public Cible</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="publicCible" placeholder="Public Cible" [(ngModel)]="publicCible"
+             class="form-control" type="text"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Durée</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="duree" placeholder="Durée" class="form-control" type="text"[(ngModel)]="duree"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Number input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Nombre Postes</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="nombrePostes" placeholder="Nombre Postes"[(ngModel)]="nombrePostes"
+             class="form-control" type="number"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Salaire</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="salaire" placeholder="Salaire" class="form-control" type="text"[(ngModel)]="salaire"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Recompense</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="recompense" placeholder="Recompense" class="form-control" type="text"[(ngModel)]="recompense"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Qualifications Requises</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="qualificationsRequises" placeholder="Qualifications Requises" [(ngModel)]="qualificationsRequises"
+            class="form-control" type="text"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Documents</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <input name="documents" placeholder="Documents" class="form-control" type="text"[(ngModel)]="documents"
+            style="width: 500px;height: 40px; border-radius: 5px;border-color: dodgerblue; ">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button style="margin-top: 20px;margin-left: 200px; width: 100px;
+           border-radius: 5px; border-color: dodgerblue; background-color: white;
+           padding: 10px; "  (click)="submitOffer()"  >
+            submit offer </button>
+        </div>
+      </div>
+
+
+
+    </fieldset>
+  </form>
+</div>

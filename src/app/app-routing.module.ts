@@ -6,6 +6,7 @@ import { AdminComponent } from './demo/layout/admin';
 import { EmptyComponent } from './demo/layout/empty';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileEtudiantComponent } from './profile-etudiant/profile-etudiant.component';
+import { OffresComponent } from './offres/offres.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       },
       {path:"profile", component:ProfileComponent},
       {path:"profileEtudiant", component:ProfileEtudiantComponent},
+      {path:"offres", component:OffresComponent},
 
     ]
   },

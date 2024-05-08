@@ -13,10 +13,13 @@ import { AuthInterceptor } from './services/auth-interceptor';
 import { EntrepriseService } from './services/entrprise';
 import { EtudiantService } from './services/etudiant';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OffresComponent } from './offres/offres.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,ProfileComponent, SharedModule,CommonModule,HttpClientModule   ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,ProfileComponent,
+    SharedModule,CommonModule,HttpClientModule ,ReactiveFormsModule,OffresComponent  ],
   bootstrap: [AppComponent],
 providers: [AuthInterceptor,EntrepriseService,EtudiantService]
 })
