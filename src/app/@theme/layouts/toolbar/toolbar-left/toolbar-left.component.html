@@ -19,8 +19,12 @@
   </mat-menu>
 
 
-  <a  *ngIf="profileData.emailContact"  href="/profile" style="margin-top:10px ;color: dodgerblue;" class="w-100"><h4>Profile</h4></a>
-  <a *ngIf="profileData.prenom" href="/profileEtudiant" style="margin-top:10px ;color: dodgerblue;" class="w-100"><h4>Profile</h4></a>
+  <a  *ngIf="profileData.emailContact"  href="/profile" style="margin-top:16px ; margin-left: 20px; color: dodgerblue;" class="w-100">
+    <h4 style="font-size: large;">Profile </h4></a>
+  <a  *ngIf="profileData.emailContact"  href="/offres" style="margin-top:16px ;color: dodgerblue; margin-left: 20px;" class="w-100">
+    <h4 style="font-size: large;">  Offer</h4></a>
+  <a *ngIf="profileData.prenom" href="/profileEtudiant" style="margin-top:16px ;  margin-left: 20px; color: dodgerblue;" class="w-100">
+    <h4 style="font-size: large;">Profile</h4></a>
 
 
 </div>

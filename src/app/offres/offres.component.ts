@@ -66,7 +66,7 @@ export class OffresComponent implements OnInit {
       this.offerService.newOffer(offer).subscribe(
         response => {
           console.log('offer successful', response);
-          this.router.navigate(['/offer']);
+          this.router.navigate(['/profile']);
 
           // Handle success response
         },
