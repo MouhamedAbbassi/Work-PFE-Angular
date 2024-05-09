@@ -15,14 +15,14 @@ export const menus: Navigation[] = [
         url: '/dashboard',
         icon: '#custom-status-up'
       },
-      {
-        id: 'Offres',
-        title: 'Offres',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/offres',
-        icon: '#custom-bag'
-      }
+      // {
+      //   id: 'Offres',
+      //   title: 'Offres',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/offres',
+      //   icon: '#custom-bag'
+      // }
     ]
   },
   {
